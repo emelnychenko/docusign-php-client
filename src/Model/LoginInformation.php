@@ -30,6 +30,7 @@
 namespace DocuSign\eSign\Model;
 
 use \ArrayAccess;
+use \Countable;
 
 /**
  * LoginInformation Class Doc Comment
@@ -39,7 +40,7 @@ use \ArrayAccess;
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class LoginInformation implements ArrayAccess
+class LoginInformation implements ArrayAccess, Countable
 {
     const DISCRIMINATOR = null;
 
@@ -234,6 +235,15 @@ class LoginInformation implements ArrayAccess
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
+    }
+    
+    /**
+     * Get count of the container
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->container);
     }
 
     /**
